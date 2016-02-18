@@ -28,7 +28,7 @@ This installs the following framework and libraries:
 - <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> library: This library is used to fly the drone.
 - <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> library: This library helps us automate the drone, for instance, enabling us to send predefined flying coordinates.
 
-4. Run install.sh.
+4. Run the install.sh script.
 
 <strong>PS: All the steps above are run on the Raspberry Pi device, through SSH.</strong>
 
