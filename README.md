@@ -1,4 +1,15 @@
-<h1>node-server-ar-drone</h1>
+<h1>Arctic IoT Challenge 2016</h1>
+
+<h2>Raiders of the Lost Pi</h2>
+
+<h3>The Concept</h3>
+
+In a tunnel or a mine shaft, an accident can potentially cause very dangerous situations and even fatalities. The time from a collision to the situation is under control is critical. The first thing an accident responder team will have to do is map out the situation. In a tunnel, gases and fire can prevent a team from going into the tunnel. Dangerous gases from a fire can behave differently in a tunnel because of chemical properties, some rising and others sinking.
+
+Norway has a lot of long tunnels, some over 20 kilometers. Connectivity in a tunnel is, as we all know, usually not very good. Laying out internet connection to cover the whole tunnel might be very costly.
+
+Our solution: <strong>Tunnel Raiders</strong>
+
 
 A <a href="http://expressjs.com/" target="_blank">Node.js Express</a> server for the <a href="http://ardrone2.parrot.com/" target="_blank">Parrot AR Drone 2.0</a>. The server uses the <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> and <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> libraries to fly the drone with REST calls.
 
