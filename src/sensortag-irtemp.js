@@ -1,6 +1,6 @@
 
 var Firebase = require('firebase');
-var ref = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog");
+var ref = new Firebase("https://ariot2016.firebaseio.com/");
 var SensorTag = require('sensortag');
 
 SensorTag.discover(function (tag) {
