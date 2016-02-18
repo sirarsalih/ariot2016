@@ -28,6 +28,7 @@ SensorTag.discover(function (tag) {
 		tag.on('irTemperatureChange', function(objectTemp, ambientTemp) {
 	     console.log('\tObject Temp = %d deg. C', objectTemp.toFixed(1));
 	     console.log('\tAmbient Temp = %d deg. C', ambientTemp.toFixed(1));
+		 var usersRef = ref.child("temperatures");
 		 usersRef.child("objectTemp").set({
 			temp: objectTemp.toFixed(1),
 			});
