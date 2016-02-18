@@ -1,9 +1,9 @@
-var express = require('C:/Users/Sirar/AppData/Roaming/npm/node_modules/express');
+var express = require('express');
 var app = express();
 var port = 1337;
-var arDrone = require('C:/Users/Sirar/AppData/Roaming/npm/node_modules/ar-drone');
+var arDrone = require('ar-drone');
 var client  = arDrone.createClient();
-var autonomy = require('C:/Users/Sirar/AppData/Roaming/npm/node_modules/ardrone-autonomy');
+var autonomy = require('ardrone-autonomy');
 
 app.get('/', function(request, response){
     response.send("Welcome to my Parrot AR node server!");

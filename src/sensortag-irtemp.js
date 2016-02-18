@@ -1,4 +1,5 @@
 
+var ref = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog");
 var SensorTag = require('sensortag');
 
 SensorTag.discover(function (tag) {
@@ -27,6 +28,12 @@ SensorTag.discover(function (tag) {
 		tag.on('irTemperatureChange', function(objectTemp, ambientTemp) {
 	     console.log('\tObject Temp = %d deg. C', objectTemp.toFixed(1));
 	     console.log('\tAmbient Temp = %d deg. C', ambientTemp.toFixed(1));
+		 usersRef.child("objectTemp").set({
+			temp: objectTemp.toFixed(1),
+			});
+		 usersRef.child("ambientTemp").set({
+			temp: ambientTemp.toFixed(1),
+			});
 	   });
 	}
 

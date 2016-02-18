@@ -1,7 +1,7 @@
 /**
- * Created by Sirar on 10.08.2014.
+ * Created by Sirar on 18.02.2016.
  */
 
-var arDrone = require('C:/Users/Sirar/AppData/Roaming/npm/node_modules/ar-drone');
+var arDrone = require('ar-drone');
 var client  = arDrone.createClient();
 client.createRepl();
