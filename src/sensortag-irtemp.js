@@ -30,12 +30,10 @@ SensorTag.discover(function (tag) {
 	     console.log('\tObject Temp = %d deg. C', objectTemp.toFixed(1));
 	     console.log('\tAmbient Temp = %d deg. C', ambientTemp.toFixed(1));
 		 var usersRef = ref.child("temperatures");
-		 usersRef.child("objectTemp").set({
-			temp: objectTemp.toFixed(1),
-			});
-		 usersRef.child("ambientTemp").set({
-			temp: ambientTemp.toFixed(1),
-			});
+		 usersRef.push({
+			 objectTemp: objectTemp.toFixed(1),
+			 ambientTemp: ambientTemp.toFixed(1)
+		 });	 
 	   });
 	}
 
