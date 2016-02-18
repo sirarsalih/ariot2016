@@ -28,9 +28,12 @@ This installs the following framework and libraries:
 - <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> library: This library is used to fly the drone.
 - <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> library: This library helps us automate the drone, for instance, enabling us to send predefined flying coordinates.
 
-We are using SensorTag among other sensors. So run the following script to install that dependency:
+<h5>Sensors!</h5>
 
-Install.sh
+We are using SensorTag among other sensors to analyze data inside the tunnels. The Raspberry Pi connects to the SensorTag through bluetooth:
+
+1. Run the install.sh script.
+2. node sensortag-irtemp.js to start the SensorTag
 
 <strong>PS: All the steps above are run on the Raspberry Pi device, through SSH.</strong>
 
