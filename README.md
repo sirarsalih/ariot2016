@@ -14,7 +14,7 @@ Our solution: <strong>Tunnel Raiders</strong>
 
 Tunnel Raiders are Parrot AR Drones, the idea is to control the drones through the internet using a Raspberry Pi 2 and performing REST calls, the drones are equipped with various sensors to analyze the tunnels. A <a href="http://expressjs.com/" target="_blank">Node.js Express</a> server for the <a href="http://ardrone2.parrot.com/" target="_blank">Parrot AR Drone 2.0</a>. The server uses the <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> and <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> libraries to fly the drone with REST calls.
 
-<h3>Getting Started</h3>
+<h4>Getting Started</h4>
 
 1. Download and install <a href="http://nodejs.org/download/" target="_blank">Node.js</a>. 
 2. Start up cmd or terminal and execute the following command:
@@ -26,8 +26,11 @@ This installs the following framework and libraries:
 - <a href="http://nodemon.io/" target="_blank">nodemon</a>, which monitors changes in the server source code and automatically restarts the server.
 - <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> library: This library is used to fly the drone.
 - <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> library: This library helps us automate the drone, for instance, enabling us to send predefined flying coordinates.
+3. Run install.sh.
 
-<h2>Connecting to the Drone</h2>
+All the steps above should be run on the Raspberry Pi device, through SSH.
+
+<h4>Connecting to the Drone</h4>
 
 Once the drone is turned on, it will send out WiFi signals like a router. Connect your device (laptop, desktop /w wireless WiFi transmitter, tablet or smart phone) to the drone via WiFi. Like a router, the drone uses the IP <code>192.168.1.1</code> by default.
 
@@ -39,7 +42,7 @@ This takes off the drone, and it will start hovering in the air. Land the drone 
 <p><code>land()</code></p>
 There are many other commands you can experiment with, more information provided <a href="https://github.com/felixge/node-ar-drone" target="_blank">here</a>.
 
-<h2>Flying the Drone with REST Calls</h2>
+<h4>Flying the Drone with REST Calls</h4>
 
 Now that we are able to establish a connection to the drone and test fly it, we are now ready to control it with REST calls using Node.js. Start up cmd or terminal and navigate to <code>node_server.js</code>, then execute the following command:
 <p><code>nodemon node_server.js</code></p>
