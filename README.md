@@ -30,7 +30,7 @@ This installs the following framework and libraries:
 
 <h5>Sensors!</h5>
 
-We are using SensorTag among other sensors to analyze data inside the tunnels. The Raspberry Pi connects to the SensorTag through bluetooth:
+We are using SensorTag to analyze data inside the tunnels. The Raspberry Pi connects to the SensorTag through bluetooth:
 
 1. Run the install.sh script.
 2. node sensortag-irtemp.js to start the SensorTag
