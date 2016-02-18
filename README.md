@@ -16,8 +16,9 @@ Tunnel Raiders are Parrot AR Drones, the idea is to control the drones through t
 
 <h4>Getting Started</h4>
 
-1. Download and install <a href="http://nodejs.org/download/" target="_blank">Node.js</a>. 
-2. Start up cmd or terminal and execute the following command:
+1. SSH into a Raspberry Pi and clone this repository.
+2. Download and install <a href="http://nodejs.org/download/" target="_blank">Node.js</a>. 
+3. Start up cmd or terminal and execute the following command:
 <p><code>npm install</code></p>
 
 This installs the following framework and libraries:
@@ -26,17 +27,17 @@ This installs the following framework and libraries:
 - <a href="http://nodemon.io/" target="_blank">nodemon</a>, which monitors changes in the server source code and automatically restarts the server.
 - <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> library: This library is used to fly the drone.
 - <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> library: This library helps us automate the drone, for instance, enabling us to send predefined flying coordinates.
-3. Run install.sh.
+4. Run install.sh.
 
-All the steps above should be run on the Raspberry Pi device, through SSH.
+<strong>PS: All the steps above are run on the Raspberry Pi device, through SSH.</strong>
 
-<h4>Connecting to the Drone</h4>
+<h4>Connecting to the Drone through a Raspberry Pi using SSH</h4>
 
-Once the drone is turned on, it will send out WiFi signals like a router. Connect your device (laptop, desktop /w wireless WiFi transmitter, tablet or smart phone) to the drone via WiFi. Like a router, the drone uses the IP <code>192.168.1.1</code> by default.
+Once the drone is turned on, it will send out WiFi signals like a router. Connect your Pi to the drone via WiFi. Like a router, the drone uses the IP <code>192.168.1.1</code> by default.
 
-Start up cmd or terminal, navigate to <code>repl.js</code> and execute the following command:
+Start up an SSH shell, connect to the Pi, navigate to <code>repl.js</code> and execute the following command:
 <p><code>nodemon repl.js</code></p> 
-This establishes a connection to the (default) IP of the drone at <code>192.168.1.1</code>. While connected to the drone, in cmd or terminal, execute the following command:
+This establishes a connection to the (default) IP of the drone at <code>192.168.1.1</code>. While connected to the drone, in terminal, execute the following command:
 <p><code>takeoff()</code></p>
 This takes off the drone, and it will start hovering in the air. Land the drone by executing the following command:
 <p><code>land()</code></p>
