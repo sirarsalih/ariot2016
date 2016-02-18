@@ -12,9 +12,9 @@ Our solution: <strong>Tunnel Raiders</strong>
 
 <h3>The Solution</h3>
 
-Tunnel Raiders are Parrot AR Drones, the idea is to control the drones through the internet using a Raspberry Pi 2 and performing REST calls. A <a href="http://expressjs.com/" target="_blank">Node.js Express</a> server for the <a href="http://ardrone2.parrot.com/" target="_blank">Parrot AR Drone 2.0</a>. The server uses the <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> and <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> libraries to fly the drone with REST calls.
+Tunnel Raiders are Parrot AR Drones, the idea is to control the drones through the internet using a Raspberry Pi 2 and performing REST calls, the drones are equipped with various sensors to analyze the tunnels. A <a href="http://expressjs.com/" target="_blank">Node.js Express</a> server for the <a href="http://ardrone2.parrot.com/" target="_blank">Parrot AR Drone 2.0</a>. The server uses the <a href="https://github.com/felixge/node-ar-drone" target="_blank">node-ar-drone</a> and <a href="https://github.com/eschnou/ardrone-autonomy" target="_blank">ardrone-autonomy</a> libraries to fly the drone with REST calls.
 
-<h2>Getting Started</h2>
+<h3>Getting Started</h3>
 
 1. Download and install <a href="http://nodejs.org/download/" target="_blank">Node.js</a>. 
 2. Start up cmd or terminal and execute the following command:
