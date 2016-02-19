@@ -4,7 +4,7 @@ var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBAS
 var arDrone = require('ar-drone');
 var client  = arDrone.createClient();
 var vsRef = ref.child("videostream");		 
-var videoStream = client.getPngStream();
+var videoStream = client.getVideoStream();
 videoStream.on('data', function(buffer) {
  vsRef.push(buffer);
 });
