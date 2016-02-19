@@ -30,11 +30,15 @@ def validateLine(line):
 	elif(line[0]=='[' and line[len(line)-1]==']'):
 		print("valid")
 		return True
+		
+def shouldFly():
+	#1. if drone is too close to roof, it should move down
+	
 
 
-ws = create_connection('ws://10.59.10.2:5000/indianadrones')
-websocket.send(buffer)
-print("websocket ok");
+#ws = create_connection('ws://10.59.10.2:5000/indianadrones')
+#websocket.send(buffer)
+#print("websocket ok");
 		
 		
 ser = serial.Serial('/dev/ttyUSB0', 9600)
@@ -42,7 +46,6 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)
 thread = Thread(target=background_thread)
 thread.daemon = True
 thread.start()
-asyncio.get_event_loop().run_until_complete(hello())
 
 while 1:
 	line = ser.readline()
