@@ -12,11 +12,7 @@ var cameraOptions = {
     th          : "0:0:0"
 };
  
-var RaspiCam = require("raspicam");
-
-var camera = new RaspiCam({ cameraOptions });
- 
-// var camera = new require("raspicam")(cameraOptions);
+var camera = new require("raspicam")({cameraOptions});
 
 camera.start();
 camera.stop();
