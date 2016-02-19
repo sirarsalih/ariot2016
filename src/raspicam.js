@@ -15,9 +15,9 @@ var cameraOptions = {
 var camera = new require("raspicam")(cameraOptions);
 
 camera.start();
-var Firebase = require('firebase');
-var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBASE_TOKEN"]);
-var vsRef = ref.child("pictures");
-vsRef.push({
-			 picturePath: ""
-		 });
+// var Firebase = require('firebase');
+// var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBASE_TOKEN"]);
+// var vsRef = ref.child("pictures");
+// vsRef.push({
+// 			 picturePath: ""
+// 		 });
