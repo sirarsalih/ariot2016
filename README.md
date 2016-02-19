@@ -1,4 +1,4 @@
-<h1>Arctic IoT Challenge 2016</h1>
+<h1>IoT Challenge 2016</h1>
 
 <h2>Raiders of the Lost Pi</h2>
 
