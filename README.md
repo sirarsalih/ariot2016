@@ -1,7 +1,7 @@
 <h1>Arctic IoT Challenge 2016</h1>
 
 <h2>Raiders of the Lost Pi</h2>
-
+Welcome to our drone/RasPi repo. Our front-end repo is at: https://github.com/magnusbae/raider-cc-ui
 <h3>The Concept</h3>
 
 In a tunnel or a mine shaft, an accident can potentially cause very dangerous situations and even fatalities. The time from a collision to the situation is under control is critical. The first thing an accident responder team will have to do is map out the situation. In a tunnel, gases and fire can prevent a team from going into the tunnel. Dangerous gases from a fire can behave differently in a tunnel because of chemical properties, some rising and others sinking.
