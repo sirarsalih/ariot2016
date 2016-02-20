@@ -12,8 +12,8 @@ SensorTag.discover(function (tag) {
 
 	function connectAndSetUpTag() {			
         console.log('connectAndSetUp');
-	    //tag.connectAndSetUp(enableIrTemp);
-		tag.connectAndSetUp(enableAccelerometer);
+	    tag.connectAndSetUp(enableIrTemp);
+		//tag.connectAndSetUp(enableAccelerometer);
 	}
 
 	function enableAccelerometer() {
@@ -25,7 +25,10 @@ SensorTag.discover(function (tag) {
 	}
 	
 	function readAccelerometer() {
-		tag.on('accelerometerChange', function(x, y, z) {	     
+		tag.on('accelerometerChange', function(x, y, z) {
+		 console.log('\tx = %d', x.toFixed(1));
+	     console.log('\ty = %d', y.toFixed(1));
+		 console.log('\tz = %d', z.toFixed(1));
 		 var usersRef = ref.child("accelerometer");
 		 usersRef.push({
 			 x: x.toFixed(1),
@@ -39,6 +42,7 @@ SensorTag.discover(function (tag) {
      console.log('enableIRTemperatureSensor');
      // when you enable the IR Temperature sensor, start notifications:
      tag.enableIrTemperature(notifyTemp);
+	 tag.enableIrTemperature(notifyAccelerometer);
    }
 
 	function notifyTemp() {
