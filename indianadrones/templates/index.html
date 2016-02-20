@@ -65,32 +65,32 @@
             });
 
             $('form#status').submit(function(event) {
-                socket.emit('indy status', {data: "1"});
+                socket.emit('indy status');
                 return false;
             });
             $('form#takeoff').submit(function(event) {
-                socket.emit('indy takeoff', {data: "1"});
+                socket.emit('indy takeoff');
                 return false;
             });
             $('form#land').submit(function(event) {
-                socket.emit('indy land', {data: "1"});
+                socket.emit('indy land');
                 return false;
             });
 
             $('form#left').submit(function(event) {
-                socket.emit('indy left', {data: "1"});
+                socket.emit('indy left');
                 return false;
             });
             $('form#right').submit(function(event) {
-                socket.emit('indy right', {data: "1"});
+                socket.emit('indy right');
                 return false;
             });
             $('form#forward').submit(function(event) {
-                socket.emit('indy forward', {data: "1"});
+                socket.emit('indy forward');
                 return false;
             });
             $('form#backward').submit(function(event) {
-                socket.emit('indy backward', {data: "1"});
+                socket.emit('indy backward');
                 return false;
             });
 
