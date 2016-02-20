@@ -24,26 +24,27 @@ setInterval(function(){
 	});
 	
 	camera.start();
+	camera.stop();	
 	
-	function base64_encode(file) {
-		var bitmap = fs.readFileSync(file);
-		return new Buffer(bitmap).toString('base64');
-	}
-	
-	function base64_decode(base64str, file) {
-		var bitmap = new Buffer(base64str, 'base64');
-		fs.writeFileSync(file, bitmap);
-		console.log('******** File created from base64 encoded string ********');
-	}
-	
-	var base64str = base64_encode('photo/image.jpg');
-	//base64_decode(base64str, 'copy.jpg');
-	
-	var vsRef = ref.child("pictures");
-	vsRef.push({
-				dateTime: new Date().toString(),
-				base64: base64str
-			});
-	console.log("Pushed base64 to FireBase...")
+	// function base64_encode(file) {
+	// 	var bitmap = fs.readFileSync(file);
+	// 	return new Buffer(bitmap).toString('base64');
+	// }
+	// 
+	// function base64_decode(base64str, file) {
+	// 	var bitmap = new Buffer(base64str, 'base64');
+	// 	fs.writeFileSync(file, bitmap);
+	// 	console.log('******** File created from base64 encoded string ********');
+	// }
+	// 
+	// var base64str = base64_encode('photo/image.jpg');
+	// //base64_decode(base64str, 'copy.jpg');
+	// 
+	// var vsRef = ref.child("pictures");
+	// vsRef.push({
+	// 			dateTime: new Date().toString(),
+	// 			base64: base64str
+	// 		});
+	// console.log("Pushed base64 to FireBase...")
 }, 1000);
 
