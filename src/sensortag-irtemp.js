@@ -113,7 +113,7 @@ SensorTag.discover(function (tag) {
 			 y: y,
 			 z: z.toFixed(1),
 			 direction: direction,
-			 directionString: 
+			 directionString: directionString,
 			 dateTime: new Date().toString()
 		 });	 
 	   });
