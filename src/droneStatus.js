@@ -14,7 +14,12 @@ var statusData = {
 };
 
 client.on('lowBattery', function(batt) {
+	statusData['battery'] = batt;
     statusData['lowBattery'] = true;
+});
+
+client.on('batteryChange', function(batt) {
+    statusData['battery'] = batt;
 });
 
 setInterval(function(){ 
