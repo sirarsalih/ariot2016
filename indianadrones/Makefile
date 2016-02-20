@@ -8,8 +8,11 @@ $(VENV):
 install: $(VENV)
 	$(PIP) install -r requirements.txt
 
-run:
+run-server:
 	$(PYTHON) app.py
+
+run-client:
+	$(PYTHON) client.py
 
 shell:
 	$(PYTHON)

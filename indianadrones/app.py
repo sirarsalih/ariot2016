@@ -102,17 +102,13 @@ MANUAL_OVERRIDE = True
 
 @socketio.on('test', namespace='/indy')
 def test():
+    global MANUAL_OVERRIDE
     if MANUAL_OVERRIDE:
         print("Manual override")
-        print("Manual override")
-        print("Manual override")
-        print("Manual override")
     else:
-        print("llllllllllllllllllllllllllllllllllllllllllllllllllllll")
-        print("llllllllllllllllllllllllllllllllllllllllllllllllllllll")
-        print("llllllllllllllllllllllllllllllllllllllllllllllllllllll")
+        print("Not manual")
     emit('test response',
-         {'data': 'hei'},
+         {'override': MANUAL_OVERRIDE},
          broadcast=True)
 
 
