@@ -42,7 +42,7 @@ SensorTag.discover(function (tag) {
      console.log('enableIRTemperatureSensor');
      // when you enable the IR Temperature sensor, start notifications:
      tag.enableIrTemperature(notifyTemp);
-	 tag.enableIrTemperature(notifyAccelerometer);
+	 tag.enableAccelerometer(notifyAccelerometer);
    }
 
 	function notifyTemp() {
