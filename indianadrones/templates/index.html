@@ -36,19 +36,19 @@
                 switch (event.keyCode) {
                 case 38:
                     console.log("Up key is pressed");
-                    socket.emit('indy forward', {data: "1"});
+                    socket.emit('indy forward');
                     break;
                 case 40:
                     console.log("Down key is pressed");
-                    socket.emit('indy backward', {data: "1"});
+                    socket.emit('indy backward');
                     break;
                 case 37:
                     console.log("left key is pressed");
-                    socket.emit('indy left', {data: "1"});
+                    socket.emit('indy left');
                     break;
                 case 39:
                     console.log("Right key is pressed");
-                    socket.emit('indy right', {data: "1"});
+                    socket.emit('indy right');
                     break;
                 }
             }
