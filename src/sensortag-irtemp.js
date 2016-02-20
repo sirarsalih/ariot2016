@@ -97,6 +97,7 @@ SensorTag.discover(function (tag) {
 		if(y == 0 && x<0)
 			direction = 180.0;
 		console.log("direction " + direction);
+		console.log(headingToString2(direction))
 		 var usersRef = ref.child("magnetometer");
 		 usersRef.push({
 			 x: x,
@@ -106,6 +107,11 @@ SensorTag.discover(function (tag) {
 			 dateTime: new Date().toString()
 		 });	 
 	   });
+	}
+	function headingToString2(x)
+	{
+		var directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
+		return directions[Math.round((  (x % 360) / 45)) ];
 	}
 
 	function notifyHumidty() {
