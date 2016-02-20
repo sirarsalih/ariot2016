@@ -125,8 +125,7 @@ def indianadrones_override(message):
 
 
 @socketio.on('indy takeoff', namespace='/indianadrones')
-def indianadrones_takeoff(message):
-    print(message)
+def indianadrones_takeoff():
     try:
         drone.takeoff()
         m = 'Attempting to takeoff...'
@@ -140,8 +139,7 @@ def indianadrones_takeoff(message):
 
 
 @socketio.on('indy land', namespace='/indianadrones')
-def indianadrones_land(message):
-    print(message)
+def indianadrones_land():
     try:
         drone.land()
         m = 'Initiating a landing operation...'
@@ -155,8 +153,7 @@ def indianadrones_land(message):
 
 
 @socketio.on('indy left', namespace='/indianadrones')
-def indianadrones_left(message):
-    print("left: ", message)
+def indianadrones_left():
     try:
         drone.move(left=1.0)
         m = 'Going left...'
@@ -170,8 +167,7 @@ def indianadrones_left(message):
 
 
 @socketio.on('indy right', namespace='/indianadrones')
-def indianadrones_right(message):
-    print("right: ", message)
+def indianadrones_right():
     try:
         drone.move(right=1.0)
         m = 'Going right...'
@@ -185,8 +181,7 @@ def indianadrones_right(message):
 
 
 @socketio.on('indy forward', namespace='/indianadrones')
-def indianadrones_forward(message):
-    print("forward: ", message)
+def indianadrones_forward():
     try:
         drone.move(forward=1.0)
         m = 'Forward!!!'
@@ -200,8 +195,7 @@ def indianadrones_forward(message):
 
 
 @socketio.on('indy backward', namespace='/indianadrones')
-def indianadrones_backward(message):
-    print("backward: ", message)
+def indianadrones_backward():
     try:
         drone.move(backward=1.0)
         m = 'Backing up, backing up, backing up, backing up!'
