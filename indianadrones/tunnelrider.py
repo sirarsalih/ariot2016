@@ -75,7 +75,7 @@ class IndianaDronesNamespace(BaseNamespace):
         global ser
         global dist_buf
         print(args)
-        time.sleep(0.5)
+        time.sleep(2)
 
         (x, y, z) = shouldFly()
 
@@ -88,7 +88,7 @@ class IndianaDronesNamespace(BaseNamespace):
 
         self.move_z(z)
         self.move_x(x)
-        self.move_y(y)
+        # self.move_y(y)
 
     def move_z(self, z):
         if z > 0:
@@ -109,7 +109,7 @@ class IndianaDronesNamespace(BaseNamespace):
             self.emit('indy down')
 
 
-socketIO = SocketIO('localhost', 4000)
+socketIO = SocketIO('0.0.0.0', 4000)
 indy = socketIO.define(IndianaDronesNamespace, '/indianadrones')
 
 
