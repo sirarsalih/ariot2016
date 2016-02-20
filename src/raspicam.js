@@ -36,10 +36,10 @@ function base64_decode(base64str, file) {
 }
 
 var base64str = base64_encode('photo/image.jpg');
-console.log(base64str);
 //base64_decode(base64str, 'copy.jpg');
 
 var vsRef = ref.child("pictures");
 vsRef.push({
+	         dateTime: new Date(),
 			 base64: base64str
 		 });
