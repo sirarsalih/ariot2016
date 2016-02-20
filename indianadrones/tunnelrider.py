@@ -72,6 +72,11 @@ class IndianaDronesNamespace(BaseNamespace):
         self.emit('test')
 
     def on_indy_response(self, *args):
+        print(args)
+        time.sleep(10)
+        self.emit('indy land')
+
+    def on_indy_response_real(self, *args):
         global ser
         global dist_buf
         print(args)
