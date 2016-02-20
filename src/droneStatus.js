@@ -23,9 +23,7 @@ client.on('batteryChange', function(batt) {
 });
 
 setInterval(function(){ 
-console.log(statusData.battery)
-console.log(statusData.height)
 statusData['state'] = client._lastState;
-//var vsRef = ref.child("droneStatus");
-//vsRef.push(statusData);
+var vsRef = ref.child("droneStatus");
+vsRef.push(statusData);
 }, 5000);
