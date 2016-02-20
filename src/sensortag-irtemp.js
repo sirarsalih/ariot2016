@@ -17,13 +17,30 @@ SensorTag.discover(function (tag) {
 	
 	function enableSensors() {		
      console.log('enableIRTemperatureSensor');
-     // when you enable the IR Temperature sensor, start notifications:
      tag.enableIrTemperature(notifyTemp);
 	 tag.enableAccelerometer(notifyAccelerometer);
+	 tag.enableHumidity(notifyHumidty);
    }
 
+	function notifyHumidty() {
+			tag.notifyHumidity(readHumidty);
+	}
+
+	function readHumidty() {
+		tag.on('humidityChange', function(temperature, humidity) {
+		 console.log('\tTemperature = %d deg. C', temperature.toFixed(1));
+	     console.log('\tyHumidty = %d', humidity.toFixed(1));
+		 var usersRef = ref.child("accelerometer");
+		 usersRef.push({
+			 x: temperature.toFixed(1),
+			 y: humidity.toFixed(1),
+			 dateTime: new Date().toString()
+		 });	 
+	   });
+	}   
+
 	function notifyAccelerometer() {
-			tag.notifyAccelerometer(readAccelerometer);   	// start the accelerometer listener
+			tag.notifyAccelerometer(readAccelerometer);
 	}
 	
 	function readAccelerometer() {
@@ -42,7 +59,7 @@ SensorTag.discover(function (tag) {
 	}   
 
 	function notifyTemp() {
-    	tag.notifyIrTemperature(readTemperature);   	// start the accelerometer listener
+    	tag.notifyIrTemperature(readTemperature); 
    }
 
 	function readTemperature() {
