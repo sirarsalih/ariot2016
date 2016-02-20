@@ -1,5 +1,8 @@
 var RaspiCam = require("raspicam");
-
+var Process = require('process');
+var Firebase = require('firebase');
+var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBASE_TOKEN"]);
+var fs = require('fs');
 var camera = new RaspiCam({
 	mode: "photo",
 	output: "./photo/image.jpg",
@@ -21,10 +24,22 @@ camera.on("exit", function( timestamp ){
 
 camera.start();
 
-var Process = require('process');
-var Firebase = require('firebase');
-var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBASE_TOKEN"]);
+function base64_encode(file) {
+    var bitmap = fs.readFileSync(file);
+    return new Buffer(bitmap).toString('base64');
+}
+
+function base64_decode(base64str, file) {
+    var bitmap = new Buffer(base64str, 'base64');
+    fs.writeFileSync(file, bitmap);
+    console.log('******** File created from base64 encoded string ********');
+}
+
+var base64str = base64_encode('photo/image.jpg');
+console.log(base64str);
+//base64_decode(base64str, 'copy.jpg');
+
 var vsRef = ref.child("pictures");
 vsRef.push({
-			 base64: ""
+			 base64: base64str
 		 });
