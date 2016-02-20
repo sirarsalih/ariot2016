@@ -10,18 +10,19 @@ var camera = new RaspiCam({
 	timeout: 0 // take the picture immediately
 });
 
-setInterval(function(){ 
-       camera.on("started", function( err, timestamp ){
-		console.log("photo started at " + timestamp );
-	});
-	
-	camera.on("read", function( err, timestamp, filename ){
-		console.log("photo image captured with filename: " + filename );
-	});
-	
-	camera.on("exit", function( timestamp ){
-		console.log("photo child process has exited at " + timestamp );
-	});
+camera.on("started", function( err, timestamp ){
+	console.log("photo started at " + timestamp );
+});
+
+camera.on("read", function( err, timestamp, filename ){
+	console.log("photo image captured with filename: " + filename );
+});
+
+camera.on("exit", function( timestamp ){
+	console.log("photo child process has exited at " + timestamp );
+});
+
+setInterval(function(){       
 	
 	camera.start();
 	camera.stop();	
