@@ -2,7 +2,7 @@ var RaspiCam = require("raspicam");
 var Process = require('process');
 var Firebase = require('firebase');
 var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBASE_TOKEN"]);
-var fs = require('fs');
+// var fs = require('fs');
 var camera = new RaspiCam({
 	mode: "photo",
 	output: "./photo/image.jpg",
