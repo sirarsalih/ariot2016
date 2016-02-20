@@ -17,13 +17,9 @@ SensorTag.discover(function (tag) {
 	
 	function enableSensors() {		
      console.log('enable sensors');
-     tag.enableIrTemperature(notifyTemp);
-	 tag.enableAccelerometer(notifyAccelerometer);
-	 tag.enableHumidity(notifyHumidty);
+     
 	 tag.enableMagnetometer(notifyMagnetometer);
-	 tag.enableBarometricPressure(notifyBarometricPressure);
-	 tag.enableGyroscope(notifyGyroscope);
-	 tag.enableLuxometer(notifyLuxometer);
+	
    }
    
    function notifyLuxometer() {
@@ -50,6 +46,7 @@ SensorTag.discover(function (tag) {
 		 console.log('\tx = %d', x.toFixed(1));
 	     console.log('\ty = %d', y.toFixed(1));
 		 console.log('\tz = %d', z.toFixed(1));
+	
 		 var usersRef = ref.child("gyroscope");
 		 usersRef.push({
 			 x: x.toFixed(1),
@@ -84,11 +81,22 @@ SensorTag.discover(function (tag) {
 		 console.log('\tx = %d', x.toFixed(1));
 	     console.log('\ty = %d', y.toFixed(1));
 		 console.log('\tz = %d', z.toFixed(1));
+		 x = x.toFixed(1);
+		 y = y.toFixed(1);
+		 var direction = 0.0;
+		if(y>0)
+			direction = 90 - [Math.atan(x/y)]*180/3.14;
+		if(y>0)
+			direction = 90 - [Math.atan(x/y)]*180/3.14;
+		if(y == 0 && x<0)
+			direction = 180.0;
+		console.log("direction " + direction);
 		 var usersRef = ref.child("magnetometer");
 		 usersRef.push({
-			 x: x.toFixed(1),
-			 y: y.toFixed(1),
+			 x: x,
+			 y: y,
 			 z: z.toFixed(1),
+			 direction: direction,
 			 dateTime: new Date().toString()
 		 });	 
 	   });
