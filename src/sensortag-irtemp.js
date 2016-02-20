@@ -21,7 +21,23 @@ SensorTag.discover(function (tag) {
 	 tag.enableAccelerometer(notifyAccelerometer);
 	 tag.enableHumidity(notifyHumidty);
 	 tag.enableMagnetometer(notifyMagnetometer);
+	 tag.enableBarometricPressure(notifyBarometricPressure);
    }
+   
+   function notifyBarometricPressure() {
+			tag.notifyBarometricPressure(readBarometricPressure);
+	}
+   
+   function readBarometricPressure() {
+		tag.on('barometricPressureChange', function(pressure) {
+		 console.log('\tPressure = %d', pressure.toFixed(1));
+		 var usersRef = ref.child("barometricpressure");
+		 usersRef.push({
+			 pressure: pressure.toFixed(1),
+			 dateTime: new Date().toString()
+		 });	 
+	   });
+	}
    
    function notifyMagnetometer() {
 			tag.notifyMagnetometer(readMagnetometer);
