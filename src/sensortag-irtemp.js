@@ -13,7 +13,7 @@ SensorTag.discover(function (tag) {
 	function connectAndSetUpTag() {			
         console.log('connectAndSetUp');
 	    tag.connectAndSetUp(enableIrTemp);
-		tag.connectAndSetUp(enableAccelerometer);
+		//tag.connectAndSetUp(enableAccelerometer);
 	}
 
 	function enableAccelerometer() {
