@@ -12,13 +12,15 @@ SensorTag.discover(function (tag) {
 
 	function connectAndSetUpTag() {			
         console.log('connectAndSetUp');
-	    tag.connectAndSetUp(enableIrTemp);
-		//tag.connectAndSetUp(enableAccelerometer);
+	    tag.connectAndSetUp(enableSensors);
 	}
-
-	function enableAccelerometer() {
-		tag.enableAccelerometer(notifyAccelerometer);
-	}
+	
+	function enableSensors() {		
+     console.log('enableIRTemperatureSensor');
+     // when you enable the IR Temperature sensor, start notifications:
+     tag.enableIrTemperature(notifyTemp);
+	 tag.enableAccelerometer(notifyAccelerometer);
+   }
 
 	function notifyAccelerometer() {
 			tag.notifyAccelerometer(readAccelerometer);   	// start the accelerometer listener
@@ -33,17 +35,11 @@ SensorTag.discover(function (tag) {
 		 usersRef.push({
 			 x: x.toFixed(1),
 			 y: y.toFixed(1),
-			 z: z.toFixed(1)
+			 z: z.toFixed(1),
+			 dateTime: new Date().toString()
 		 });	 
 	   });
-	}
-
-   function enableIrTemp() {		
-     console.log('enableIRTemperatureSensor');
-     // when you enable the IR Temperature sensor, start notifications:
-     tag.enableIrTemperature(notifyTemp);
-	 tag.enableAccelerometer(notifyAccelerometer);
-   }
+	}   
 
 	function notifyTemp() {
     	tag.notifyIrTemperature(readTemperature);   	// start the accelerometer listener
@@ -56,7 +52,8 @@ SensorTag.discover(function (tag) {
 		 var usersRef = ref.child("temperatures");
 		 usersRef.push({
 			 objectTemp: objectTemp.toFixed(1),
-			 ambientTemp: ambientTemp.toFixed(1)
+			 ambientTemp: ambientTemp.toFixed(1),
+			 dateTime: new Date().toString()
 		 });	 
 	   });
 	}
