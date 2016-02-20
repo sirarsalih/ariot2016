@@ -110,7 +110,7 @@ SensorTag.discover(function (tag) {
 	}
 	function headingToString2(x)
 	{
-		var directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
+		var directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
 		return directions[Math.round((  (x % 360) / 45)) ];
 	}
 
