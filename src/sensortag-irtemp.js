@@ -91,9 +91,9 @@ SensorTag.discover(function (tag) {
 		 y = y.toFixed(1);
 		 var direction = 0.0;
 		if(y>0)
-			direction = 90 - [Math.atan(x/y)]*180/3.14;
+			direction = 90 - [Math.atan(x/y)]*(180/3.14);
 		if(y>0)
-			direction = 90 - [Math.atan(x/y)]*180/3.14;
+			direction = 90 - [Math.atan(x/y)]*(180/3.14);
 		if(y == 0 && x<0)
 			direction = 180.0;
 		console.log("direction " + direction);
