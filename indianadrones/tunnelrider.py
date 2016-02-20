@@ -55,7 +55,8 @@ def shouldFly():
     return (x, y, z)
 
 
-# ser = serial.Serial('/dev/ttyUSB0', 9600)
+if not MOCK:
+    ser = serial.Serial('/dev/ttyUSB0', 9600)
 
 
 class IndianaDronesNamespace(BaseNamespace):
@@ -78,11 +79,12 @@ class IndianaDronesNamespace(BaseNamespace):
 
         (x, y, z) = shouldFly()
 
-        line = ser.readline()
-        line = line.decode('unicode_escape', errors='ignore')
-        if validateLine(line):
-            line = re.search("(\[[0-9, ]+\])", line).group()
-            dist_buf = eval(line)
+        if not MOCK:
+            line = ser.readline()
+            line = line.decode('unicode_escape', errors='ignore')
+            if validateLine(line):
+                line = re.search("(\[[0-9, ]+\])", line).group()
+                dist_buf = eval(line)
 
         self.move_z(z)
         self.move_x(x)
@@ -107,20 +109,20 @@ class IndianaDronesNamespace(BaseNamespace):
             self.emit('indy down')
 
 
-socketIO = SocketIO('localhost', 5000)
+socketIO = SocketIO('localhost', 4000)
 indy = socketIO.define(IndianaDronesNamespace, '/indianadrones')
 
 
-if not MOCK:
-    ser = serial.Serial('/dev/ttyUSB0', 9600)
+# if not MOCK:
+#     ser = serial.Serial('/dev/ttyUSB0', 9600)
 
-    thread = Thread(target=background_thread)
-    thread.daemon = True
-    thread.start()
+#     thread = Thread(target=background_thread)
+#     thread.daemon = True
+#     thread.start()
 
-    while True:
-        line = ser.readline()
-        line = line.decode('unicode_escape', errors='ignore')
-        if validateLine(line):
-            line = re.search("(\[[0-9, ]+\])", line).group()
-            dist_buf = eval(line)
+#     while True:
+#         line = ser.readline()
+#         line = line.decode('unicode_escape', errors='ignore')
+#         if validateLine(line):
+#             line = re.search("(\[[0-9, ]+\])", line).group()
+#             dist_buf = eval(line)
