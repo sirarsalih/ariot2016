@@ -19,7 +19,13 @@ SensorTag.discover(function (tag) {
      console.log('enable sensors');
      
 	 tag.enableMagnetometer(notifyMagnetometer);
-	
+	 tag.enableIrTemperature(notifyTemp);
+	 tag.enableAccelerometer(notifyAccelerometer);
+	 tag.enableHumidity(notifyHumidty);
+	 tag.enableMagnetometer(notifyMagnetometer);
+	 tag.enableBarometricPressure(notifyBarometricPressure);
+	 tag.enableGyroscope(notifyGyroscope);
+	 tag.enableLuxometer(notifyLuxometer);
    }
    
    function notifyLuxometer() {
