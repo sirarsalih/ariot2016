@@ -1,4 +1,4 @@
-<h1>IoT Challenge 2016</h1>
+<h1>Arctic IoT Challenge 2016</h1>
 
 <h2>Raiders of the Lost Pi</h2>
 Welcome to our drone/RasPi repo. Our front-end repo is at: https://github.com/magnusbae/raider-cc-ui
