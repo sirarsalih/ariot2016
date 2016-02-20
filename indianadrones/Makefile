@@ -12,7 +12,7 @@ run-server:
 	$(PYTHON) app.py
 
 run-client:
-	$(PYTHON) client.py
+	$(PYTHON) tunnelrider.py
 
 shell:
 	$(PYTHON)
