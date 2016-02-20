@@ -16,5 +16,5 @@ six==1.9.0
 pyardrone==0.5.1dev1
 pyserial==3.0.1
 python-socketio==1.0
--e git+https://github.com/sondrele/socketIO-client.git@7f673045c86732287ed273827e2f9d6b8ca45601#egg=socketIO_client-origin/master
+-e git+https://github.com/sondrele/socketIO-client.git@7f673045c86732287ed273827e2f9d6b8ca45601#egg=socketIO_client
 websocket-client==0.35.0
