@@ -88,8 +88,8 @@ SensorTag.discover(function (tag) {
 	     console.log('\tHumidty = %d', humidity.toFixed(1));
 		 var usersRef = ref.child("humidity");
 		 usersRef.push({
-			 x: temperature.toFixed(1),
-			 y: humidity.toFixed(1),
+			 temperature: temperature.toFixed(1),
+			 humidity: humidity.toFixed(1),
 			 dateTime: new Date().toString()
 		 });	 
 	   });
