@@ -20,3 +20,11 @@ camera.on("exit", function( timestamp ){
 });
 
 camera.start();
+
+var Process = require('process');
+var Firebase = require('firebase');
+var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBASE_TOKEN"]);
+var vsRef = ref.child("pictures");
+vsRef.push({
+			 base64: ""
+		 });
