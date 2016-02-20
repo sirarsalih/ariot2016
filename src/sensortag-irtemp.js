@@ -97,7 +97,15 @@ SensorTag.discover(function (tag) {
 		if(y == 0 && x<0)
 			direction = 180.0;
 		console.log("direction " + direction);
-		console.log(headingToString2(direction))
+		if(direction >270.0 && direction <= 360.0)
+			console.log("north");
+		if(direction >=180.0 && direction < 270.0)
+			console.log("west");
+		if(direction >=90.0 && direction < 180.0)
+			console.log("south");
+		if(direction < 90.0)
+			console.log("east");
+
 		 var usersRef = ref.child("magnetometer");
 		 usersRef.push({
 			 x: x,
@@ -108,12 +116,7 @@ SensorTag.discover(function (tag) {
 		 });	 
 	   });
 	}
-	function headingToString2(x)
-	{
-		var directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
-		return directions[Math.round((  (x % 360) / 45)) ];
-	}
-
+	
 	function notifyHumidty() {
 			tag.notifyHumidity(readHumidty);
 	}
