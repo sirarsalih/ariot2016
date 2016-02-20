@@ -5,7 +5,7 @@ var ref = new Firebase("https://ariot2016.firebaseio.com/", Process.env["FIREBAS
 // var fs = require('fs');
 var camera = new RaspiCam({
 	mode: "photo",
-	output: "./photo/image.jpg",
+	output: "photo/image.jpg",
 	encoding: "jpg",
 	timeout: 0 // take the picture immediately
 });
@@ -25,7 +25,6 @@ camera.on("exit", function( timestamp ){
 setInterval(function(){       
 	
 	camera.start();
-	camera.stop();	
 	
 	// function base64_encode(file) {
 	// 	var bitmap = fs.readFileSync(file);
