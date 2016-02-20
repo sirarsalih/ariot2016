@@ -23,7 +23,23 @@ SensorTag.discover(function (tag) {
 	 tag.enableMagnetometer(notifyMagnetometer);
 	 tag.enableBarometricPressure(notifyBarometricPressure);
 	 tag.enableGyroscope(notifyGyroscope);
+	 tag.enableLuxometer(notifyLuxometer);
    }
+   
+   function notifyLuxometer() {
+			tag.notifyLuxometer(readLuxometer);
+	}
+   
+   function readLuxometer() {
+		tag.on('luxometerChange', function(lux) {
+		 console.log('\tLux = %d', lux.toFixed(1));
+		 var usersRef = ref.child("luxometer");
+		 usersRef.push({
+			 lux: lux.toFixed(1),
+			 dateTime: new Date().toString()
+		 });	 
+	   });
+	}
    
    function notifyGyroscope() {
 			tag.notifyGyroscope(readGyroscope);
