@@ -97,21 +97,23 @@ SensorTag.discover(function (tag) {
 		if(y == 0 && x<0)
 			direction = 180.0;
 		console.log("direction " + direction);
+		var directionString = "no direction";
 		if(direction >270.0 && direction <= 360.0)
-			console.log("north");
+			directionString = "North";
 		if(direction >=180.0 && direction < 270.0)
-			console.log("west");
+			directionString = "West";
 		if(direction >=90.0 && direction < 180.0)
-			console.log("south");
+			directionString = "South";
 		if(direction < 90.0)
-			console.log("east");
-
+			directionString = "East";
+		console.log(directionString);
 		 var usersRef = ref.child("magnetometer");
 		 usersRef.push({
 			 x: x,
 			 y: y,
 			 z: z.toFixed(1),
 			 direction: direction,
+			 directionString: 
 			 dateTime: new Date().toString()
 		 });	 
 	   });
