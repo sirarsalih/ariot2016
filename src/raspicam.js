@@ -40,6 +40,6 @@ var base64str = base64_encode('photo/image.jpg');
 
 var vsRef = ref.child("pictures");
 vsRef.push({
-	         dateTime: new Date(),
+	         dateTime: new Date().toString(),
 			 base64: base64str
 		 });
