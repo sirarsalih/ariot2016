@@ -1,3 +1,5 @@
+var arDrone = require('ar-drone');
+
 var client  = arDrone.createClient();
 var Firebase = require('firebase');
 var Process = require('process');
