@@ -22,7 +22,27 @@ SensorTag.discover(function (tag) {
 	 tag.enableHumidity(notifyHumidty);
 	 tag.enableMagnetometer(notifyMagnetometer);
 	 tag.enableBarometricPressure(notifyBarometricPressure);
+	 tag.enableGyroscope(notifyGyroscope);
    }
+   
+   function notifyGyroscope() {
+			tag.notifyGyroscope(readGyroscope);
+	}
+	
+	function readGyroscope() {
+		tag.on('gyroscopeChange', function(x, y, z) {
+		 console.log('\tx = %d', x.toFixed(1));
+	     console.log('\ty = %d', y.toFixed(1));
+		 console.log('\tz = %d', z.toFixed(1));
+		 var usersRef = ref.child("gyroscope");
+		 usersRef.push({
+			 x: x.toFixed(1),
+			 y: y.toFixed(1),
+			 z: z.toFixed(1),
+			 dateTime: new Date().toString()
+		 });	 
+	   });
+	}
    
    function notifyBarometricPressure() {
 			tag.notifyBarometricPressure(readBarometricPressure);
